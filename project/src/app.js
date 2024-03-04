@@ -19,4 +19,12 @@ app.use(express.urlencoded({extended:true, limit:"16kb"}))
 app.use(express.static("public"))
 // cookie parser is used to crud user browser's cookie
 app.use(cookieParser())
+
+// routes
+import userRouter from './routes/user.routes.js'
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
+
+
 export { app }
